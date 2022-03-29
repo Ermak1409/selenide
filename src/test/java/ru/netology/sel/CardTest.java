@@ -18,7 +18,7 @@ public class CardTest {
         open("http://localhost:9999");
 
         LocalDate today = LocalDate.now();
-        LocalDate futureDay = today.plusDays(5);
+        LocalDate futureDay = today.plusDays(4);
 
         $("[data-test-id='city'] .input__control").setValue("Рязань");
         $("[data-test-id='date'] .input__control").setValue(futureDay.toString());
@@ -27,7 +27,7 @@ public class CardTest {
         $("[data-test-id='agreement'] .checkbox__box").click();
 
         $$("[type='button']").find(exactText("Забронировать")).click();
-        $(withText("Успешно")).shouldBe(appear, Duration.ofSeconds(10));
+        $(withText("Успешно")).shouldBe(appear, Duration.ofSeconds(14));
     }
 
 
